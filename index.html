@@ -161,6 +161,13 @@
             word-break: break-all;
         }
 
+        .choice-btn img {
+            max-width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
         .choice-btn:active {
             transform: translateY(3px);
             border-bottom-width: 3px;
@@ -362,7 +369,7 @@
 
     <!-- Screen 1: File Selection -->
     <div id="screen-upload" class="screen active">
-        <h1>Choice4 Test App</h1>
+        <h1>Choice4 Test App★</h1>
         <p>Excelファイルをえらんでね！</p>
         <p style="font-size: 0.8rem; color: #888;">「予定表」シートを読み込みます</p>
         <label id="upload-btn-label" for="file-input">
@@ -421,7 +428,7 @@
 
     <script>
         // QUESTIONS_DATA_START
-        const embeddedQuestions = [{"q": "長野県＞野辺山原などキャベツやレタス、白菜 のような寒 いとこで作 る野菜 を〇〇野菜 という", "n": 1, "a": "高原野菜", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "徳島県＞ぐるぐるうずをまく〇〇海峡のうずしお", "n": 2, "a": "鳴門", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "広島県の世界文化遺産である神社は？", "n": 3, "a": "厳島神社", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "広島県の世界文化遺産である戦争遺産は？", "n": 4, "a": "原爆ドーム", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "広島市は、〇〇川の河口部分の三角州です。", "n": 5, "a": "太田川", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "生牡蠣ちゃんやレモンの生産量日本一は〇〇県", "n": 6, "a": "広島県", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "広島市＞太田川の河口部分の地形を何という？", "n": 7, "a": "三角州　〇", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "広島県＞自動車工業がさかんな町は？", "n": 8, "a": "府中町　※太田市は群馬じゃない？", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "広島県＞造船業がさかんな市は？", "n": 9, "a": "呉市", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "広島県＞原爆が投下されたのは何年何月何日？", "n": 10, "a": "1945/8/6", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "岡山県と香川県を結ぶ〇〇橋は、児島-坂出ルートと呼ばれる", "n": 11, "a": "瀬戸大橋", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "生産量＞ねぎ　①位　②位　③位", "n": 12, "a": "①茨城②埼玉③千葉", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "鶏肉の輸入相手国　①位　②位", "n": 13, "a": "①ブラジル②タイ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "愛知県の明治用水の水源および供給先は？", "n": 14, "a": "矢作川、岡崎平野 ※矢は上出ません！", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "水産＞養殖業＞のりの養殖　①位　②位", "n": 15, "a": "海苔すけサンガ,ヒョウヒョウと　①佐賀②兵庫", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "水産＞養殖業＞ホタテの養殖　①位　②位", "n": 16, "a": "①青森②北海道　※陸奥湾よ♪", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "水産＞さけ、ますの輸入先国　①位　②位", "n": 17, "a": "チリノルサンボ　①チリ②ノルウェー", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "水産＞えびの輸入先国　①位　②位", "n": 18, "a": "ベトベトイン　①ベトナム②インド", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "さいごうたかもり（薩長同盟むすんだぜ）", "n": 19, "a": "西郷隆盛", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "のぐちひでよ（なんかの伝染病みつけたぜ）", "n": 20, "a": "野口英世", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "軽工業＞せんい＞①、②、③から天然せんいを作ったり、化学せんいを作ったりする工業", "n": 21, "a": "①綿花、②羊毛、③かいこのまゆ", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "工業＞戦後（1945年以後）から工業が発達したのはどっち？→工業地帯・工業地域", "n": 22, "a": "工業地域", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞一番出荷額が多い工業地帯は？それは何のおかげ？", "n": 23, "a": "中京工業地帯、トヨタ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞京浜工業地帯＞出荷額が約50％なのは何業？", "n": 24, "a": "機械工業〇", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞阪神工業地帯が含まれる県は？", "n": 25, "a": "大阪、兵庫、和歌山", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞阪神工業地帯＞出荷額1位は機械で40%ですが、2位の〇〇業が20%で割合が大きいです。", "n": 26, "a": "金属工業", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞阪神工業地帯＞電気機器（パナソニックだね）の生産が盛んな企業城下町の市といえば？", "n": 27, "a": "門真市", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞北九州工業地帯は1901年に鉄を作る〇〇製鉄所が操業開始しました。", "n": 28, "a": "八幡製鉄所", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞北九州工業地帯＞出荷額の割合は阪神に似てるけど〇〇業が比較的高いです。（明太子かな？）", "n": 29, "a": "食料品", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "＜かしまりんかい＞工業地域", "n": 30, "a": "鹿島臨海", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞関東内陸工業地域は海がないので〇〇工業の割合が低いです。", "n": 31, "a": "化学工業", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞関東内陸工業地域＞桐生市や足利市では〇〇が盛んです。", "n": 32, "a": "絹織物", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞瀬戸内工業地域＞京葉工業地域ほどではないけど〇〇工業の割合が高め", "n": 33, "a": "化学工業　〇", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞京葉工業地域は〇〇湾に面した〇〇県の工業地域", "n": 34, "a": "東京湾、千葉", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞京葉工業地域＞千葉県と言えば〇〇工業と言われるくらいこの工業が盛ん", "n": 35, "a": "化学工業　〇〇", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞東海工業地域が含まれる県は？", "n": 36, "a": "静岡県", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞鹿島臨海工業地域が含まれる県は？", "n": 37, "a": "茨城県", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "気候＞霜害とは冷えこみが厳しいときの霜による被害の事だが、発生する場所といえば？", "n": 38, "a": "北海道や高地（牧之原のお茶はファンを使ってる）", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "北海道の山＞うすざん", "n": 39, "a": "有珠山", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "群馬県と長野県の境にある　〇〇山", "n": 40, "a": "浅間山", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "長野県と山梨県の境にある山は？※高原じゃなくて山だよ～", "n": 41, "a": "八ヶ岳　※野辺山原は山だよ～", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "江戸2＞元禄時代＞米の生産量増加政策を行い米将軍と呼ばれた人はだれ？", "n": 42, "a": "8代将軍徳川吉宗", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "江戸2＞年貢の割合をあげたことなどで主に農村部で起こった反乱行動を漢字4文字でなんだ？", "n": 43, "a": "百姓一揆", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "江戸3＞化政文化＞国学を大成したのは？", "n": 44, "a": "本居宣長", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "江戸3＞化政文化＞解体新書を翻訳したのは？＜①＞・前野良沢", "n": 45, "a": "①杉田玄白", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "江戸3＞化政文化＞大日本沿海余地全図の作者は？", "n": 46, "a": "伊能忠敬", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "明治3＞1911年＞日本がアメリカとの条約改正によって回復した権利はなに？", "n": 47, "a": "関税自主権", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "明治3＞日本とロシアの戦争に反対した①社会主義者は？②キリスト教徒は？③弟を心配した詩人は？", "n": 48, "a": "①幸徳秋水②内村鑑三③与謝野晶子「君死に給ふことなかれ」", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "昭和2＞日本国憲法＞①公布した年月日は？②施行した年月日は？", "n": 49, "a": "①1946年11月3日　②1947年5月3日※公布 から半年間 、周知 させてからの施行", "t": "", "choices": [], "practice": true, "p": 1}];
+        const embeddedQuestions = [{"q": "長野県＞野辺山原などキャベツやレタス、白菜 のような寒 いとこで作 る野菜 を〇〇野菜 という", "n": 1, "a": "高原野菜", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "岡山県＞①市の②地区ではコンビナートが見られる", "n": 2, "a": "①倉敷②水島", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "岡山県にある日本三大名園は？", "n": 3, "a": "後楽園", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "愛媛県＞日当たりをよくするために階段状にした畑をなんという？", "n": 4, "a": "段々畑〇", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "愛媛県＞〇〇市のタオルは柔らかくて最高。タオルだけじゃないよ、造船も！", "n": 5, "a": "今治", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "高知県の野菜の栽培方法は？", "n": 6, "a": "促成栽培〇〇〇", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "高知県＞伝統的工芸品の＜とさわし＞", "n": 7, "a": "土佐和紙", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "高知県の土佐和紙は、〇〇や〇〇という木から作られる", "n": 8, "a": "こうぞ、みつまた", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "高知県＞沖合を〇〇海流が流れるので促成栽培にむいている", "n": 9, "a": "日本海流", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "高知県＞〇〇の一本釣りが有名。一杯いきたいけど春ちゃんは10才まだ早い。", "n": 10, "a": "かつお", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "徳島県＞有名な柑橘系のくだものは？", "n": 11, "a": "すだち ※かぼすも似てるんだけど、徳島はすだちが有名なの", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "愛知県の明治用水の水源および供給先は？", "n": 12, "a": "矢作川、岡崎平野 ※矢は上出ません！", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "水産＞養殖業＞のりの養殖　①位　②位", "n": 13, "a": "海苔すけサンガ,ヒョウヒョウと　①佐賀②兵庫", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "水産＞養殖業＞ホタテの養殖　①位　②位", "n": 14, "a": "①青森②北海道　※陸奥湾よ♪", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "水産＞さけ、ますの輸入先国　①位　②位", "n": 15, "a": "チリノルサンボ　①チリ②ノルウェー", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "水産＞えびの輸入先国　①位　②位", "n": 16, "a": "ベトベトイン　①ベトナム②インド", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "げんしじだい", "n": 17, "a": "原始時代", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "おだのぶなが", "n": 18, "a": "織田信長", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "きたざとしばさぶろう（なんかの菌みつけたぜ）", "n": 19, "a": "北里柴三郎", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "軽工業＞せんい＞①、②、③から天然せんいを作ったり、化学せんいを作ったりする工業", "n": 20, "a": "①綿花、②羊毛、③かいこのまゆ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞戦前（1945年以前）から工業が発達していたのはどっち？→工業地帯・工業地域", "n": 21, "a": "工業地帯", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞4大工業地帯（最近は北九州を抜いた3大）を含む工業の盛んな地帯を何と呼ぶ？", "n": 22, "a": "太平洋ベルト", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞京浜工業地帯が含まれる県は？", "n": 23, "a": "東京、神奈川", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞中京工業地帯が含まれる県は？（1つ近畿地方の県もあるよ♪）", "n": 24, "a": "愛知、岐阜、三重（三重は近畿地方だけど中京工業地帯に含まれる）", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞中京工業地帯では機械工業が出荷額の約〇〇%を占めている。車だよねー", "n": 25, "a": "70パーセント", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞阪神工業地帯＞（大工場・中小工場）が多い", "n": 26, "a": "中小工場", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞関東内陸工業地域が含まれる県は？", "n": 27, "a": "海なし県の埼玉、群馬、栃木", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞関東内陸工業地域＞企業城下町の〇〇市では自動車部品を作っています。", "n": 28, "a": "太田市 ※横須賀は内陸じゃないよ、海だよ", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞瀬戸内工業地域＞①や②の跡地につくられた", "n": 29, "a": "①塩田　②軍用地", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞東海工業地域の企業城下町といえば〇〇市", "n": 30, "a": "浜松市", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞北陸工業地域＞薬といったら〇〇県", "n": 31, "a": "富山県", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞鹿島臨海工業地域＞ここは砂浜海岸なので船が入ってこれるように〇〇港を作った", "n": 32, "a": "掘り込み港", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "工業＞①＜かしま＞臨海工業地域の②＜かしま＞市", "n": 33, "a": "①鹿島　②鹿嶋", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "鹿児島県にある活火山は？", "n": 34, "a": "桜島", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "旧石器（数万年前）＞群馬県岩宿…①が発見、黒曜石のナイフ、関東ローム層", "n": 35, "a": "相沢忠洋", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "奈良（701年）＞大宝律令は、刑部親王や①＜〇〇※鎌足の子＞らが制定した", "n": 36, "a": "①藤原不比等", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "明治1＞文明開化で積極的に欧米の制度や技術文化を取り入れた目的は？", "n": 37, "a": "不平等条約を改正するために強くなりたい", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "明治3＞日本とロシアの戦争に反対した①社会主義者は？②キリスト教徒は？③弟を心配した詩人は？", "n": 38, "a": "①幸徳秋水②内村鑑三③与謝野晶子「君死に給ふことなかれ」", "t": "", "choices": [], "practice": true, "p": 1}, {"q": "大正＞第一次世界大戦は何年開始？", "n": 39, "a": "1914年", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "大正＞第一次世界大戦＞①同盟国 VS ②連合国　それぞれの国は？（ドイツ、イギリス、フランス、オーストリア、ロシア）", "n": 40, "a": "①ドイツ、オーストリア②イギリス、フランス、ロシア　※後からアメリカが連合国側に入る", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "大正＞二十一ヶ条の要求は、日本がどこの国に対して有利な条件を要求したものですか？", "n": 41, "a": "中国", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "大正＞犬養毅や尾崎行雄が行った、憲法に基づいた政治を行おうと言う考え方を推進する運動は？", "n": 42, "a": "護憲運動", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "大正＞吉野作造が唱えた考え方は？", "n": 43, "a": "民本主義 ※民主じゃなくて民本ね！", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "大正＞「元始、女性は実に太陽であった～」平塚らいてうは、これを何という雑誌に書いた？", "n": 44, "a": "青鞜", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "昭和1＞日独伊三国同盟の3国とはどこのこと？", "n": 45, "a": "日本、ドイツ、イタリア", "t": "", "choices": [], "practice": false, "p": 1}, {"q": "昭和2＞日本国憲法＞①公布した年月日は？②施行した年月日は？", "n": 46, "a": "①1946年11月3日　②1947年5月3日※公布 から半年間 、周知 させてからの施行", "t": "", "choices": [], "practice": true, "p": 1}];
         // QUESTIONS_DATA_END
 
         let questions = [];
@@ -573,9 +580,20 @@
             isWaitingForCorrection = false;
             const q = questions[currentIndex];
             progressText.innerText = `${currentIndex + 1} / ${questions.length}`;
-            questionText.innerText = q.q;
             
-            const len = q.q.length;
+            // 問題文の画像判定と表示
+            let pureText = q.q;
+            let questionImgHtml = "";
+            const imgMatch = q.q.match(/[a-zA-Z0-9_\-]+\.(jpg|jpeg|png|gif|webp)/i);
+            if (imgMatch) {
+                const imgFile = imgMatch[0];
+                pureText = q.q.replace(imgFile, "").trim();
+                questionImgHtml = `<br><img src="image/${imgFile}" style="max-width:100%; max-height:200px; margin-top:10px; border-radius:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">`;
+            }
+
+            questionText.innerHTML = pureText + questionImgHtml;
+            
+            const len = pureText.length;
             questionText.style.fontSize = len < 15 ? "2.2rem" : len < 30 ? "1.6rem" : len < 60 ? "1.3rem" : "1.1rem";
             
             choiceContainer.innerHTML = "";
@@ -583,6 +601,11 @@
             answerBox.innerText = "";
             answerBox.style.display = "none";
             judgeOverlay.className = "";
+
+            const isImage = (text) => {
+                if (!text || typeof text !== 'string') return false;
+                return /\.(jpg|jpeg|png|gif|webp)$/i.test(text.trim());
+            };
 
             const isChoiceMode = (q.t === "4択");
             
@@ -603,8 +626,17 @@
                 displayChoices.forEach(choiceText => {
                     const btn = document.createElement('button');
                     btn.className = 'choice-btn';
+                    btn.setAttribute('data-choice', choiceText);
                     if (q.practice && choiceText === q.a) btn.classList.add('practice-hint');
-                    btn.innerText = choiceText;
+                    
+                    if (isImage(choiceText)) {
+                        const img = document.createElement('img');
+                        img.src = `image/${choiceText.trim()}`;
+                        btn.appendChild(img);
+                    } else {
+                        btn.innerText = choiceText;
+                    }
+                    
                     btn.onclick = () => handleChoiceClick(choiceText, btn);
                     choiceContainer.appendChild(btn);
                 });
@@ -625,7 +657,11 @@
 
         checkAnsBtn.onclick = () => {
             const q = questions[currentIndex];
-            answerBox.innerText = q.a;
+            if (/\.(jpg|jpeg|png|gif|webp)$/i.test(q.a.trim())) {
+                answerBox.innerHTML = `<img src="image/${q.a.trim()}" style="max-height:100px; object-fit:contain;">`;
+            } else {
+                answerBox.innerText = q.a;
+            }
             answerBox.style.display = "flex";
             checkAnsBtn.style.display = "none";
             selfJudgeBtns.style.display = "flex";
@@ -678,9 +714,10 @@
 
             const buttons = choiceContainer.querySelectorAll('.choice-btn');
             buttons.forEach(b => {
+                const bText = b.getAttribute('data-choice');
                 b.classList.remove('practice-hint');
                 b.classList.add('disabled');
-                if (b.innerText === q.a) {
+                if (bText === q.a) {
                     b.classList.add('correct');
                     if (!isCorrect) b.classList.add('waiting-correct');
                 } else if (b === btn && !isCorrect) {
